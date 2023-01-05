@@ -66,10 +66,37 @@
 
 #buttons-container #equal-btn{
     grid-column: span 2;
-    background-color: #75a5cb;
+
+    background-color: chocolate;
 }
 
 #buttons-container #equal-btn:hover{
-    background-color: darkblue;
+    border: 3px solid brown;
+    
+}
+
+
+#buttons-container .maior{
+    background-color: #75a5cb;
+
+}
+
+#buttons-container .maior:hover{
+    background-color: blue;
+
+}
+
+#buttons-container .funcao{
+    background-color: aquamarine;
+
+}
+
+#buttons-container .funcao:hover{
+    background-color: aqua;
+
+}
+
+#buttons-container #none{
+    background-color: greenyellow;
 }
 
