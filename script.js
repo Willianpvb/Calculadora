@@ -24,7 +24,8 @@ class Calculadora{
                 this.limparTudo();
                 break;
             case "=":
-                if(this.conta.length >= 3 && !(this.operadores.includes(this.conta[this.conta.length-2]))){
+                console.log(this.conta.split(' ').filter(numero => numero != ''))
+                if(this.conta.split(' ').filter(numero => numero != '').length >= 3){
                     this.h2.innerHTML = this.resultado();
                 }
                 break;
@@ -90,9 +91,9 @@ class Calculadora{
      *Transforma todos os numeros que são String em Numeros 
      * @returns retorna uma lista com os numeros e operações separados, com os números transformados em numbers
      */
-    converterParaNumero(){
+    converterParaNumero(conta){
         //Transformar Strings em Numericos
-        let contaPartes = this.conta.split(' ')
+        let contaPartes = conta.split(' ')
 
         for(let x = 0; x < contaPartes.length; x++ ){
             let valor = contaPartes[x]
@@ -186,7 +187,7 @@ class Calculadora{
      * @returns retorna o resulta da conta
      */
     resultado(){
-        let calculo = this.converterParaNumero()
+        let calculo = this.converterParaNumero(this.conta)
 
         let resultado = this.calculando(calculo)
         resultado = resultado.toString()
