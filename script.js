@@ -24,7 +24,6 @@ class Calculadora{
                 this.limparTudo();
                 break;
             case "=":
-                console.log(this.conta.split(' ').filter(numero => numero != ''))
                 if(this.conta.split(' ').filter(numero => numero != '').length >= 3){
                     this.h2.innerHTML = this.resultado();
                 }
