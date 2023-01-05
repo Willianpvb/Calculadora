@@ -24,8 +24,13 @@ class Calculadora{
                 this.limparTudo();
                 break;
             case "=":
-                if(this.conta.split(' ').filter(numero => numero != '').length >= 3){
+                let  filtro = this.conta.split(' ').filter(numero => numero != '')
+                //Primeira condição : só deixar contas formadas com dois numeros e um operador ou mais passar
+                //Segunda condição : só deixa passar se não for um operador no final
+                if(filtro.length >= 3 && !this.operadores.includes(filtro.pop())){
                     this.h2.innerHTML = this.resultado();
+                }else{
+                    alert("Termina a equação pô!")
                 }
                 break;
             default:
